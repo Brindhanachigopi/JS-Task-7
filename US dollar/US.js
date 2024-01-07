@@ -1,14 +1,14 @@
 //1. e. Print the country that uses US dollars as currency
 
-let req = new XMLHttpRequest();
+let request = new XMLHttpRequest();
 
-req.open("GET","https://restcountries.com/v2/all");
+request.open("GET","https://restcountries.com/v2/all");
 
-req.send();
+request.send();
 
-req.onload=function(){
-    var res=JSON.parse(req.response);
-   var currency = res.filter((element) => {
+request.onload=function(){
+    let res=JSON.parse(request.response);
+   let currency = res.filter((element) => {
      for(let key in element.currencies){
         if(element.currencies[key].code === "USD"){
             return element;
